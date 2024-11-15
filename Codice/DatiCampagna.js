@@ -78,11 +78,11 @@ async function loadDati() {
         
         document.getElementById('medianValue').textContent = Mediana;
 
-        
+        /*
         const address = "0xBcd4042DE499D14e55001CcbB24a551F3b954096";
         const balance = await provider.getBalance(address);
         console.log(`Bilancio di ${address}: ${ethers.utils.formatEther(balance)} ETH`);
-        return balance;
+        return balance; */
 
     } catch (error) {
         console.error('Errore durante il caricamento delle campagne:', error);
