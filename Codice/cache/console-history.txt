@@ -1,0 +1,5 @@
+const accounts = await ethers.getSigners();
+}
+    console.log(`${account.address} -> ${ethers.utils.formatEther(balance)} ETH`);
+for (c    const balance = await account.getBalance();
+const accounts = await ethers.getSigners();

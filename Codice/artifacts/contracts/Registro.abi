@@ -1,0 +1,215 @@
+[
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "newValue",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "oldReputation",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "weight",
+          "type": "int256"
+        }
+      ],
+      "name": "FinalReputation",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256[]",
+          "name": "val",
+          "type": "int256[]"
+        }
+      ],
+      "name": "Median",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_addressDevice",
+          "type": "address[]"
+        },
+        {
+          "internalType": "int256[]",
+          "name": "rep",
+          "type": "int256[]"
+        }
+      ],
+      "name": "UpdateReputations",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tolerance",
+          "type": "uint256"
+        }
+      ],
+      "name": "constraintFunction",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256[]",
+          "name": "val",
+          "type": "int256[]"
+        },
+        {
+          "internalType": "int256",
+          "name": "medianVal",
+          "type": "int256"
+        }
+      ],
+      "name": "distanceFromMedian",
+      "outputs": [
+        {
+          "internalType": "int256[]",
+          "name": "",
+          "type": "int256[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllProducers",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addressDevice",
+              "type": "address"
+            },
+            {
+              "internalType": "int256",
+              "name": "reputation",
+              "type": "int256"
+            }
+          ],
+          "internalType": "struct Registro.Producer[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getProducerCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "producerAddresses",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "producers",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "addressDevice",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "reputation",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_addressDevice",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "_reputation",
+          "type": "int256"
+        }
+      ],
+      "name": "registerProducer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]

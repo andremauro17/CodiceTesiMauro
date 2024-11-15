@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producers List</title>
+    <style>
+         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+
+        .navbar {
+            width: 100%;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: black;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            border : none;
+        }
+
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        th {
+            background-color: #ddd;
+            padding: 12px;
+            font-weight: bold;
+            text-align: left;
+            border-bottom: 2px solid #ccc;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        tr:not(:last-child) td {
+            border-bottom: 1px solid #ddd;
+        }
+        th, td {
+            border-right: 1px solid #ddd;
+        }
+        
+        th:last-child, td:last-child {
+            border-right: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar"> 
+    <a href="CreaProducer.html">Create Producer</a>
+    <a href="CreaCampagna.html">Create Campaign</a>
+    <a href="ListaProducer.html">View Producers</a>
+    <a href="ListaCampagne.html">View Campaigns</a>
+    </div>
+    <h1>Producers List</h1>
+    <table id="ProducersTable">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Reputation</th> 
+            </tr>
+        </thead>
+        <tbody id="ProducersList">
+     
+        </tbody>
+    </table>
+
+    <script src="/bundle/bundleListaProducers.js"></script>
+</body>
+</html>

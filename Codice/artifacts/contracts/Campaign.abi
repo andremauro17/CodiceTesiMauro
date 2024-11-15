@@ -1,0 +1,348 @@
+[
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "crowdsourcer",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "_lat",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "_long",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "_tolerance",
+          "type": "int256"
+        },
+        {
+          "internalType": "string",
+          "name": "camptype",
+          "type": "string"
+        },
+        {
+          "internalType": "int256",
+          "name": "numProd",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "dataValue",
+          "type": "int256"
+        },
+        {
+          "internalType": "address",
+          "name": "addrProd",
+          "type": "address"
+        }
+      ],
+      "name": "addData",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "allProducersDataSubmitted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256[]",
+          "name": "score",
+          "type": "int256[]"
+        }
+      ],
+      "name": "closeCampaignAndPay",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "producerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getProducerData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "producerAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "int256",
+              "name": "dataValue",
+              "type": "int256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Campaign.Data",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getProducersTop",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "deviceAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "int256",
+              "name": "reputation",
+              "type": "int256"
+            },
+            {
+              "internalType": "int256",
+              "name": "valueSort",
+              "type": "int256"
+            }
+          ],
+          "internalType": "struct Campaign.ProducerSelected[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getProducersTopCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getSeed",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTolerance",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getValid",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "producerData",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "producerAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "dataValue",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "producersTop",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "deviceAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "reputation",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "valueSort",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proof",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "deviceAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "int256",
+              "name": "reputation",
+              "type": "int256"
+            },
+            {
+              "internalType": "int256",
+              "name": "valueSort",
+              "type": "int256"
+            }
+          ],
+          "internalType": "struct Campaign.ProducerSelected[]",
+          "name": "producersT",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "setProducersTop",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_Seed",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "p",
+          "type": "bytes"
+        }
+      ],
+      "name": "setSeedProof",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "setValid",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ]

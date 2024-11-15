@@ -1,0 +1,375 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\Tesi\\Codice\\contracts\\Campaign.sol": {
+      "lastModificationDate": 1731678806500,
+      "contentHash": "689bccc18b81afd1ed109e4ef4bb11a0",
+      "sourceName": "contracts/Campaign.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Campaign"
+      ]
+    },
+    "D:\\Tesi\\Codice\\vrf-solidity-master\\contracts\\VRF.sol": {
+      "lastModificationDate": 1727442910506,
+      "contentHash": "2665cb0ec70561c0d041cc4402299ef8",
+      "sourceName": "vrf-solidity-master/contracts/VRF.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../elliptic-curve-solidity/contracts/EllipticCurve.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "VRF"
+      ]
+    },
+    "D:\\Tesi\\Codice\\elliptic-curve-solidity\\contracts\\EllipticCurve.sol": {
+      "lastModificationDate": 1727443054325,
+      "contentHash": "a6c040a4bb23ecad265dffef6d2dba55",
+      "sourceName": "elliptic-curve-solidity/contracts/EllipticCurve.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "EllipticCurve"
+      ]
+    },
+    "D:\\Tesi\\Codice\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1724827885819,
+      "contentHash": "896f68942c3a20e9ae3c3c5bfd3add54",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "D:\\Tesi\\Codice\\contracts\\Factory.sol": {
+      "lastModificationDate": 1731678096796,
+      "contentHash": "73a99ca8d82dd56df3d280f232e9abaf",
+      "sourceName": "contracts/Factory.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Campaign.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "CampaignFactory"
+      ]
+    },
+    "D:\\Tesi\\Codice\\contracts\\Registro.sol": {
+      "lastModificationDate": 1731678495388,
+      "contentHash": "a7a7e85b31499925fd7b9f7b9d069113",
+      "sourceName": "contracts/Registro.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Registro"
+      ]
+    },
+    "D:\\Tesi\\Codice\\prb\\contracts\\PRBMathUD60x18.sol": {
+      "lastModificationDate": 1731162212329,
+      "contentHash": "ea06e5964d6db368921b74c21e01999b",
+      "sourceName": "prb/contracts/PRBMathUD60x18.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PRBMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.4"
+      ],
+      "artifacts": [
+        "PRBMathUD60x18"
+      ]
+    },
+    "D:\\Tesi\\Codice\\prb\\contracts\\PRBMath.sol": {
+      "lastModificationDate": 1731162212320,
+      "contentHash": "e5a2346290b1f420ef28ce51340cf55e",
+      "sourceName": "prb/contracts/PRBMath.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.4"
+      ],
+      "artifacts": [
+        "PRBMath"
+      ]
+    },
+    "D:\\Tesi\\Codice\\prb\\contracts\\PRBMathSD59x18.sol": {
+      "lastModificationDate": 1731162212324,
+      "contentHash": "e44d828374ae472ddd0aa35d1a436f16",
+      "sourceName": "prb/contracts/PRBMathSD59x18.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PRBMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.4"
+      ],
+      "artifacts": [
+        "PRBMathSD59x18"
+      ]
+    },
+    "D:\\Tesi\\Codice\\contracts\\Campaign2.sol": {
+      "lastModificationDate": 1727441555642,
+      "contentHash": "514a02981fa6c9c145d0ec0746ff6eda",
+      "sourceName": "contracts/Campaign2.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../vrf-solidity-master/contracts/VRF.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Campaign2"
+      ]
+    }
+  }
+}

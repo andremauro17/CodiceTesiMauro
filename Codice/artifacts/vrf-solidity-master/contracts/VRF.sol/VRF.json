@@ -1,0 +1,89 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "VRF",
+  "sourceName": "vrf-solidity-master/contracts/VRF.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "AA",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "BB",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "GX",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "GY",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "NN",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "PP",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x610229610053600b82828239805160001a607314610046577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361061006c5760003560e01c806303a507be146100715780635727dc5c1461008f5780637a308a4c146100ad5780639870e2a4146100cb578063997da8d4146100e9578063eeeac01e14610107575b600080fd5b610079610125565b60405161008691906101d8565b60405180910390f35b610097610149565b6040516100a491906101d8565b60405180910390f35b6100b561014e565b6040516100c291906101d8565b60405180910390f35b6100d3610172565b6040516100e091906101d8565b60405180910390f35b6100f1610196565b6040516100fe91906101d8565b60405180910390f35b61010f61019b565b60405161011c91906101d8565b60405180910390f35b7f79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f8179881565b600781565b7f483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b881565b7ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036414181565b600081565b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f81565b6000819050919050565b6101d2816101bf565b82525050565b60006020820190506101ed60008301846101c9565b9291505056fea2646970667358221220c6693e93d9f8696aacc9d7779914f686e6cffd6e5d9945f557c7b610de6aee5e64736f6c63430008180033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361061006c5760003560e01c806303a507be146100715780635727dc5c1461008f5780637a308a4c146100ad5780639870e2a4146100cb578063997da8d4146100e9578063eeeac01e14610107575b600080fd5b610079610125565b60405161008691906101d8565b60405180910390f35b610097610149565b6040516100a491906101d8565b60405180910390f35b6100b561014e565b6040516100c291906101d8565b60405180910390f35b6100d3610172565b6040516100e091906101d8565b60405180910390f35b6100f1610196565b6040516100fe91906101d8565b60405180910390f35b61010f61019b565b60405161011c91906101d8565b60405180910390f35b7f79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f8179881565b600781565b7f483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b881565b7ffffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036414181565b600081565b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f81565b6000819050919050565b6101d2816101bf565b82525050565b60006020820190506101ed60008301846101c9565b9291505056fea2646970667358221220c6693e93d9f8696aacc9d7779914f686e6cffd6e5d9945f557c7b610de6aee5e64736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

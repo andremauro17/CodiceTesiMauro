@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Producer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: black;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            border : none;
+        }
+
+
+        .container {
+            width: 320px;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, button, a {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .reputation-text {
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            display: block; 
+            text-align: left;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="CreaProducer.html">Create Producer</a>
+        <a href="CreaCampagna.html">Create Campaign</a>
+        <a href="ListaProducer.html">View Producers</a>
+        <a href="ListaCampagne.html">View Campaigns</a>
+    </div>
+
+    <div class="container">
+        <h1>CREATE PRODUCER</h1>
+        
+        <div class="form-group">
+            <label for="addressDev">Enter the device address</label>
+            <input type="text" id="addressDev" placeholder="Enter the device address">
+        </div>
+        
+        <span class="reputation-text">Reputation is zero</span>
+        
+        <div class="form-group">
+            <button onclick="run()">CREATE PRODUCER</button>
+        </div>
+        
+        <div class="form-group">
+            <a href="ListaProducer.html">VIEW PRODUCERS</a>
+        </div>
+        
+        <div id="output"></div>
+    </div>
+    
+    <script src="/bundle/bundleProducer.js"></script>
+</body>
+</html>

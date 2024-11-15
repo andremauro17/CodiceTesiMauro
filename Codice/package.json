@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.22.9",
+    "hardhat-gas-reporter": "^2.2.1"
+  },
+  "dependencies": {
+    "@idena/vrf-js": "^1.0.1",
+    "bn.js": "^5.2.1",
+    "browserify": "^17.0.1",
+    "dotenv": "^16.4.5",
+    "elliptic": "^6.5.7",
+    "js-sha3": "^0.9.3",
+    "node-fetch": "^3.3.2",
+    "prb-math": "^2.4.3",
+    "seedrandom": "^3.0.5"
+  }
+}

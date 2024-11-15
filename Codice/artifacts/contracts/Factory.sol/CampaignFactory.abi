@@ -1,0 +1,77 @@
+[
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "campaigns",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "nameC",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "crowdsourcer",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "_lat",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "_long",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "_tol",
+          "type": "int256"
+        },
+        {
+          "internalType": "string",
+          "name": "camptype",
+          "type": "string"
+        },
+        {
+          "internalType": "int256",
+          "name": "numProd",
+          "type": "int256"
+        }
+      ],
+      "name": "createCampaign",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllCampaigns",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
