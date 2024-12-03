@@ -5,7 +5,6 @@ describe("Gas Cost Test", function () {
     it("Register 50 producers and check gas costs", async function () {
       const [owner] = await ethers.getSigners();
   
-      // Deploy del contratto Registro
       const RegistroFactory = await ethers.getContractFactory("Registro");
       const registro = await RegistroFactory.deploy();
       await registro.deployed();
@@ -13,12 +12,13 @@ describe("Gas Cost Test", function () {
       const reputazione = 0;
   
       for (let i = 0; i < 1000; i++) {
-        // Genera un indirizzo casuale usando la libreria ethers
         const randomWallet = ethers.Wallet.createRandom();
         const randomAddress = randomWallet.address;
-  
-        // Registra il producer con l'indirizzo generato casualmente
-        const tx = await registro.registerProducer(randomAddress, reputazione);
+
+        const tx = await registro.registerProducer(randomAddress, reputazione, {
+            maxFeePerGas: ethers.utils.parseUnits("50", "gwei"), // Imposta un valore più alto
+            maxPriorityFeePerGas: ethers.utils.parseUnits("2", "gwei"), // Commissione prioritaria
+        });
         await tx.wait();
         //console.log(`Producer ${i + 1} registered: ${randomAddress}`);
       }
@@ -26,35 +26,35 @@ describe("Gas Cost Test", function () {
       const campaignFactory = await CampaignFactory.deploy();
       await campaignFactory.deployed();
   
-      // Creazione di una campagna tramite CampaignFactory
       const nomeC = "Campagna di Test";
       const latitudine = 12345;
       const longitudine = 67890;
-      const range = 100;
+      const tolleranza = 3;
       const camptype = "foto";
       const numeroProd = 100;
   
-      const tx1 = await campaignFactory.createCampaign(nomeC, owner.address, latitudine, longitudine, range, camptype, numeroProd);
+      const tx1 = await campaignFactory.createCampaign(nomeC, owner.address, latitudine, longitudine, tolleranza, camptype, numeroProd);
       await tx1.wait();
       console.log("Campaign created");
-  
-      // Recupero dell'indirizzo della campagna appena creata
       const campaigns = await campaignFactory.getAllCampaigns();
       const latestCampaignAddress = campaigns[campaigns.length - 1];
       console.log("Latest Campaign Address:", latestCampaignAddress);
-  
-      // Interazione con il contratto Campaign
       const Campaign = await ethers.getContractFactory("Campaign");
       const campaign = await Campaign.attach(latestCampaignAddress);
-  
-      // Esempio di chiamata a una funzione nel contratto Campaign
-      const campaignName = await campaign.getNomeCampagna();
+      const campaignName = await campaign.getName();
       console.log("Nome della Campagna:", campaignName);
       const producers = await registro.getAllProducers();
       console.log("Numero producers:", producers.length);
-      const concatenatedData = producers.map(producer => `${producer.addressDevice}+${producer.reputazione}`).join(";");
+      const concatenatedData = producers.map(producer => `${producer.addressDevice}+${producer.reputation}`).join(";");
       
     
+      const fundTx = await owner.sendTransaction({
+        to: latestCampaignAddress, 
+        value: ethers.utils.parseEther("1.0"), 
+    });
+    await fundTx.wait();
+    console.log("Fondi aggiunti con successo al contratto:", latestCampaignAddress);
+
     const data = {
         latestCampaignAddress: latestCampaignAddress,
         numProd: numeroProd,
@@ -88,9 +88,9 @@ describe("Gas Cost Test", function () {
         console.log("VRF:", vrfBytes);
         console.log("Proof:", proofBytes);
         console.log("Valid:", isValid);
-        //console.log("Lista dei produttori:", producersTop);
+        console.log("Lista dei produttori:", producersTop);
 
-        const tx2 = await campaign.setSemeProof(vrfBytes,proofBytes);
+        const tx2 = await campaign.setSeedProof(vrfBytes,proofBytes);
         await tx2.wait();
 
         const tx3 = await campaign.setValid();
@@ -99,12 +99,11 @@ describe("Gas Cost Test", function () {
         const producersData = producersTop.map(producer => {
           return {
               deviceAddress: producer.deviceAddress,
-              reputazione: ethers.BigNumber.from(producer.reputazione.toString()),
-              score: ethers.BigNumber.from(producer.score.toString())
+              reputation: ethers.BigNumber.from(producer.reputation.toString()),
+              valueSort: ethers.BigNumber.from(producer.valueSort.toString())
           };
       });
       
-      // Stampa o usa `producersData` per ottenere un array con solo i campi necessari
       //console.log(producersData);
       
       const tx4 = await campaign.setProducersTop(producersData);
@@ -117,43 +116,47 @@ describe("Gas Cost Test", function () {
       for(const prod of producersData){
         address.push(prod.deviceAddress);
         const val = Math.floor(Math.random() * 15) + 20;
+        const valMoltiplicato = BigInt(val*10**18);
         //console.log(prod.deviceAddress);
-        valori.push(val);
-        await campaign.addData(val,prod.deviceAddress);
+        valori.push(valMoltiplicato);
+        await campaign.addData(valMoltiplicato,prod.deviceAddress);
         finishData = await campaign.allProducersDataSubmitted();
        }
 
        //console.log(valori.length);
 
        if(finishData == true){
-        const tolleranza = BigInt(300000000000000000);
-                const mediana = await registro.mediana(valori);
+                const mediana = await registro.Median(valori);
                 for(const s of valori){
                     console.log("valore:", s.toString())
                 }
 
                 console.log("Mediana:", mediana.toString());
-                const score = await registro.score(valori,mediana);
-                for(const s of score){
+                const distance = await registro.distanceFromMedian(valori,mediana);
+                for(const s of distance){
                     console.log("valore score: ",s.toString());
                 }
                 const peso = BigInt(700000000000000000);
 
                 const reputazioni = [];
-                for(var i = 0;i<score.length;i++){
-                    const constraint = await registro.constraintFunction(score[i],tolleranza);
+                const tol = BigInt(tolleranza*10**18);
+                for(var i = 0;i<distance.length;i++){
+                    const constraint = await registro.constraintFunction(distance[i],tol);
                     console.log("Constraint function (full precision):", constraint.toString());
-                    const rep = await registro.FinalReputation(constraint,producersData[i].reputazione,peso);
+                    const rep = await registro.FinalReputation(constraint,producersData[i].reputation,peso);
                     console.log("reputazione: ",rep);
                     reputazioni.push(rep);
                     const cDec = parseFloat(ethers.utils.formatUnits(constraint, 18));
                     const repDec = parseFloat(ethers.utils.formatUnits(rep, 18));
-                    
+                    await campaign.addScore(constraint,address[i]);
                     //console.log("constraint:", cDec, ", rep:", repDec);
 
                 }
 
                 await registro.UpdateReputations(address,reputazioni);
+                const payTx = await campaign.closeCampaignAndPay();
+                await payTx.wait();
+                console.log("Pagamenti completati con successo.");
        }
 
 
