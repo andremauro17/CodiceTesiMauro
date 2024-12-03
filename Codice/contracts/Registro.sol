@@ -65,16 +65,16 @@ contract Registro {
     }
 
      function distanceFromMedian(int256[] memory val, int256 medianVal) public pure returns (int256[] memory) {
-        int256[] memory scoreArray = new int256[](val.length);
+        int256[] memory distanceArray = new int256[](val.length);
         for (uint256 i = 0; i < val.length; i++) {
             if(val[i] >= medianVal){
-                 scoreArray[i] = val[i] - medianVal;
+                 distanceArray[i] = val[i] - medianVal;
             } else{
-            scoreArray[i] = medianVal - val[i];    
+            distanceArray[i] = medianVal - val[i];    
             }
            
         }
-        return scoreArray;
+        return distanceArray;
     }
 
 
@@ -83,7 +83,7 @@ contract Registro {
 
 function constraintFunction(uint256 _value, uint256 tolerance) public pure returns (int256) {
     require(tolerance > 0, "Tau deve essere maggiore di zero");
-    uint256 aScaled = _value * SCALE;
+    //uint256 aScaled = _value * SCALE;
     uint256 ratio = (aScaled * SCALE) / tolerance;
     uint256 ratioSquared = (ratio * ratio) / SCALE;
     uint256 denominator = SCALE + ratioSquared;
