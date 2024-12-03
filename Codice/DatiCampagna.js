@@ -51,7 +51,8 @@ async function loadDati() {
 
             
             const ValueDato = document.createElement('td');
-            ValueDato.textContent = dato.dataValue;
+            const valOriginale = parseFloat(ethers.utils.formatUnits(dato.dataValue, 18))
+            ValueDato.textContent = valOriginale;
             dati.push(dato.dataValue);
             row.appendChild(ValueDato);
 
@@ -75,8 +76,8 @@ async function loadDati() {
             i++;
         }
 
-        
-        document.getElementById('medianValue').textContent = Mediana;
+        MedianaVal = parseFloat(ethers.utils.formatUnits(Mediana, 18));
+        document.getElementById('medianValue').textContent = MedianaVal;
 
         /*
         const address = "0xBcd4042DE499D14e55001CcbB24a551F3b954096";
