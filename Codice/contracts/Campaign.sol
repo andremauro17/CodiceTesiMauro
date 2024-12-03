@@ -29,9 +29,14 @@ contract Campaign {
     uint256 timestamp; 
     }
 
+    struct ScoreProducer{
+        address producerAddress;
+        int256 score;
+    }
 
    
     mapping(address => Data) public producerData;
+    mapping (address => ScoreProducer) public producerScore;
     bytes32 seed;
     bytes public proof;
     bool valid = false;
@@ -54,6 +59,7 @@ contract Campaign {
 
 
      function setProducersTop(ProducerSelected[] memory producersT) public {
+        require(msg.sender == crowdsourcerAddress,"You don't do it");
         delete producersTop;
 
         for (uint256 i = 0; i < producersT.length; i++) {
@@ -139,8 +145,21 @@ contract Campaign {
     function getSeed() public view returns (bytes32){
         return seed;
     }
+    function addScore(int256 dataValue,address addrProd) public{
+            require(valid == true, "The campaign is not valid");
+            require(isOpen == true, "The campaign is closed");
+            require(isProducerRegistered(addrProd), "Producer not registered");
+    
+            ScoreProducer memory newScore = ScoreProducer({
+                producerAddress: addrProd,
+                score: dataValue
+            });
+    
+            producerScore[addrProd] = newScore;
+        }
 
     function closeCampaignAndPay(int256[] memory score) public payable  {
+        require(msg.sender == crowdsourcerAddress,"You don't close the campaign");
         require(isOpen == true,"The campaign is closed");
         address[] memory addressSelectedTemp = new address[](producersTop.length);
         uint256 count = 0;
