@@ -117,9 +117,10 @@ async function main() {
             for(const prod of producersTop){
             addressProducers.push(prod.deviceAddress);
             const val = Math.floor(Math.random() * 15) + 20;
-            valori.push(val);
+            const valMoltiplicato = BigInt(val*10**18);
+            valori.push(valMoltiplicato);
             console.log(prod.deviceAddress);
-            await campaign.addData(val,prod.deviceAddress);
+            await campaign.addData(valMoltiplicato,prod.deviceAddress);
             finishData =  await campaign.allProducersDataSubmitted();
             }
 
@@ -148,7 +149,8 @@ async function main() {
                     reputazioni.push(rep);
                     const cDec = parseFloat(ethers.utils.formatUnits(constraint, 18));
                     const repDec = parseFloat(ethers.utils.formatUnits(rep, 18));
-                    score.push(constraint)
+                    //score.push(constraint)
+                    await campaign.addScore(constraint,addressProducers[i]);
                     console.log("constraint:", cDec, ", rep:", repDec);
 
                 }
